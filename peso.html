@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Peso y Nombre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        label, input {
+            margin: 5px 0;
+            display: block;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Ingresá tu nombre y peso</h2>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" placeholder="Ej: Juan">
+
+    <label for="peso">Peso (kg):</label>
+    <input type="number" id="peso" placeholder="Ej: 70">
+
+    <button onclick="mostrarMensaje()">Aceptar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarMensaje() {
+            let nombre = document.getElementById("nombre").value;
+            let peso = document.getElementById("peso").value;
+
+            if (nombre && peso) {
+                document.getElementById("resultado").textContent =
+                    `Hola ${peso}kg, tu peso es ${nombre}`;
+            } else {
+                document.getElementById("resultado").textContent =
+                    "Por favor completá ambos campos.";
+            }
+        }
+    </script>
+
+</body>
+</html>
